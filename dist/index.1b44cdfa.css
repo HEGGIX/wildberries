@@ -248,10 +248,10 @@ legend {
   border-radius: 5px;
   width: 50%;
   height: 75%;
-  margin-top: 10%;
-  margin-left: 25%;
   display: none;
-  position: fixed;
+  position: relative;
+  top: 10%;
+  left: 25%;
   overflow: auto;
 }
 

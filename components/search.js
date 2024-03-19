@@ -23,7 +23,9 @@ function createSearch() {
       const card = titleDiv.parentElement;
       const titleName = titleDiv.innerHTML.toLowerCase();
       const indexes = titleName.search(searchedValue);
-      if (indexes === -1) card.style.display = 'none';
+      if (indexes === -1) {
+        card.style.display = 'none';
+      }
     });
   }
 }

@@ -195,18 +195,17 @@ $moderate-gray: #8e8d8d;
     height: 100%;
     overflow: auto;
     .modalWindow {
-      overflow: auto;
-      display: none;
-      position: fixed;
-      background-color: white;
-      border-radius: 5px;
-      border: solid 4px $clr;
-      width: 50%;
-      height: 75%;
-      margin-left: 25%;
       z-index: 20;
-      margin-top: 10%;
-  
+    position: relative;
+    top: 10%;
+    left: 25%;
+    background-color: #fff;
+    border: 4px solid #7d3a7b;
+    border-radius: 5px;
+    width: 50%;
+    height: 75%;
+    display: none;
+    overflow: auto;
       .closeButton {
         border-radius: 5px;
         border: solid 2px $clr;

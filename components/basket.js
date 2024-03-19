@@ -1,6 +1,6 @@
 import { basketBtn } from "./header";
 
-export default function createBasket() {
+function createBasket() {
     const containerModalWindow = document.createElement("div");
       containerModalWindow.classList.add("containerModalWindow");
       root.append(containerModalWindow);
@@ -113,4 +113,3 @@ export default function createBasket() {
     
       updateTotalCost();
     };
-    
