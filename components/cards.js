@@ -40,7 +40,6 @@ function addCards() {
       .then((response) => response.json())
       .then((products) => {
         products = products.slice(0, 25);
-        console.log(products);
         products.forEach((product) => {
           product.discount = Math.floor(Math.random() * 80) + 5;
           product.discount_price = Math.ceil(
@@ -164,7 +163,6 @@ function addCards() {
     addBtn.addEventListener("click", () => {
       const productCopy = Object.assign({}, product);
       productsInTheCart.push(productCopy);
-      console.log(productsInTheCart);
     });
 
     quickViewBtn.addEventListener("click", function (event) {
@@ -391,7 +389,6 @@ function addCards() {
           productsInTheCart.splice(indexToRemove, 1);
         }
 
-        console.log(productsInTheCart);
       });
 
       containerForBasket.appendChild(imageElement);

@@ -3,7 +3,6 @@ import { searchInp } from "./header";
 function createSearch() {
 
   const cardTitles = Array.from(document.querySelectorAll(".product__title"));
-  console.log(cardTitles);
 
   searchInp.oninput = hideNotSearcedCards;
 

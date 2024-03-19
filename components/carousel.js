@@ -64,24 +64,23 @@ function createCarousel(){
     carousel.addEventListener("touchstart", handleTouchStart, false);
     carouselLine.addEventListener("touchmove", handleTouchMove, false);
 
-    let x = 0;
+    let axisX = 0;
 
     function handleTouchStart(event) {
         const touches = event.touches[0];
-        x = touches.clientX;
+        axisX = touches.clientX;
     }
 
     function handleTouchMove(event) {
-        if(x == 0){
+        if(axisX == 0){
             return false
         }
         let moveX = event.touches[0].clientX;
-        console.log(moveX);
-        let xDiff = x - moveX;
+        let xDiff = axisX - moveX;
         if(xDiff > 0){
             rightMove()
         }else leftMove()
-        x = 0;
+        axisX = 0;
     }
 }
 export default createCarousel;

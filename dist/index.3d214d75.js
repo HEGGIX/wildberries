@@ -711,19 +711,18 @@ function createCarousel() {
     leftCarouselBtn.addEventListener("click", leftMove);
     carousel.addEventListener("touchstart", handleTouchStart, false);
     carouselLine.addEventListener("touchmove", handleTouchMove, false);
-    let x = 0;
+    let axisX = 0;
     function handleTouchStart(event) {
         const touches = event.touches[0];
-        x = touches.clientX;
+        axisX = touches.clientX;
     }
     function handleTouchMove(event) {
-        if (x == 0) return false;
+        if (axisX == 0) return false;
         let moveX = event.touches[0].clientX;
-        console.log(moveX);
-        let xDiff = x - moveX;
+        let xDiff = axisX - moveX;
         if (xDiff > 0) rightMove();
         else leftMove();
-        x = 0;
+        axisX = 0;
     }
 }
 exports.default = createCarousel;
@@ -759,7 +758,6 @@ function addCards() {
     function fetchDataAndRenderCards() {
         fetch("https://api.escuelajs.co/api/v1/products").then((response)=>response.json()).then((products)=>{
             products = products.slice(0, 25);
-            console.log(products);
             products.forEach((product)=>{
                 product.discount = Math.floor(Math.random() * 80) + 5;
                 product.discount_price = Math.ceil(product.price - product.price * product.discount / 100);
@@ -840,7 +838,6 @@ function addCards() {
         addBtn.addEventListener("click", ()=>{
             const productCopy = Object.assign({}, product);
             productsInTheCart.push(productCopy);
-            console.log(productsInTheCart);
         });
         quickViewBtn.addEventListener("click", function(event) {
             event.stopPropagation();
@@ -1014,7 +1011,6 @@ function addCards() {
                     updateTotalCost();
                     productsInTheCart.splice(indexToRemove, 1);
                 }
-                console.log(productsInTheCart);
             });
             containerForBasket.appendChild(imageElement);
             containerForBasket.appendChild(nameElement);
@@ -1061,7 +1057,6 @@ parcelHelpers.defineInteropFlag(exports);
 var _header = require("./header");
 function createSearch() {
     const cardTitles = Array.from(document.querySelectorAll(".product__title"));
-    console.log(cardTitles);
     (0, _header.searchInp).oninput = hideNotSearcedCards;
     function showAllCards() {
         cardTitles.forEach((div)=>{
